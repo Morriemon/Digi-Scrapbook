@@ -293,6 +293,7 @@
       <h1 class="title">Pages of our memories</h1>
 
       <div id="flipbook">
+        
         <!-- Page 1 -->
         <div class="page">
           <div class="page-content">
@@ -1296,9 +1297,31 @@
       </div>
 
       <div class="page-indicator">
-        <span id="currentPage">1</span> of <span id="totalPages">5</span>
+        <span id="currentPage">1</span> of <span id="totalPages">14</span>
       </div>
     </div>
+
+    // pagination or drop down
+   <div class="page-jump">
+  <label for="pageSelect">Jump to page:</label>
+  <select id="pageSelect">
+    <option value="1">Page 1</option>
+    <option value="2">Page 2</option>
+    <option value="3">Page 3</option>
+    <option value="4">Page 4</option>
+    <option value="5">Page 5</option>
+    <option value="6">Page 6</option>
+    <option value="7">Page 7</option>
+    <option value="8">Page 8</option>
+    <option value="9">Page 9</option>
+    <option value="10">Page 10</option>
+    <option value="10">Page 11</option>
+    <option value="10">Page 12</option>
+    <option value="10">Page 13</option>
+    <option value="10">Page 14</option>
+  </select>
+</div>
+
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/turn.js/3/turn.min.js"></script>
@@ -1384,6 +1407,17 @@
               showPageWithTransition(currentPage + 1);
             }
           });
+          
+        // Dropdown page selector
+  for (let i = 1; i <= totalPages; i++) {
+    $("#pageSelect").append(new Option("Page " + i, i));
+  }
+
+  $("#pageSelect").on("change", function () {
+    let page = parseInt($(this).val());
+    showPage(page);
+  });
+});
       });
     </script>
   </body>
