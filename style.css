@@ -61,10 +61,13 @@
         transform: none;
       }
 
-      .page-indicator {
-        text-align: center;
-        margin-top: 15px;
-        font-family: "Allura", cursive;
-        font-size: 1.2rem;
-        color: #ff69b4;
-      }
+      .page-indicator select {
+  margin: 0 8px;
+  padding: 6px 12px;
+  border-radius: 20px;
+  border: 2px solid #ff85c1;
+  background: #fff0f5;
+  font-family: "Lora", serif;
+  font-size: 14px;
+  cursor: pointer;
+}
